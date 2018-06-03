@@ -1,0 +1,21 @@
+.nav-list{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 30px 0;
+  border-bottom: 2px solid black;
+
+  &__item{
+
+
+    &-link{
+      font-size: 20px;
+      color: #000;
+      text-decoration: none;
+
+      &.active{
+        text-decoration: underline;
+      }
+    }
+  }
+}
