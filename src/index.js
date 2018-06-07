@@ -7,7 +7,6 @@ import {BrowserRouter} from 'react-router-dom';
 import createHistory from "history/createBrowserHistory";
 import {
     ConnectedRouter,
-    routerReducer,
     routerMiddleware,
     push
 } from "react-router-redux";
