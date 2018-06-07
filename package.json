@@ -14,9 +14,9 @@
     "babel-preset-env": "*",
     "babel-preset-react": "*",
     "babel-preset-stage-0": "*",
-    "bootstrap": "*",
     "css-loader": "*",
     "file-loader": "*",
+    "history": "^4.7.2",
     "node-sass": "^4.9.0",
     "path": "*",
     "react": "*",
@@ -24,6 +24,7 @@
     "react-redux": "*",
     "react-router": "*",
     "react-router-dom": "*",
+    "react-router-redux": "^5.0.0-alpha.9",
     "reactjs-popup": "*",
     "redux-logger": "*",
     "redux-thunk": "*",
@@ -33,5 +34,8 @@
     "webpack-cli": "^2.0.13",
     "webpack-dev-server": "*",
     "webpack-merge": "*"
+  },
+  "devDependencies": {
+    "redux": "^4.0.0"
   }
 }
