@@ -10,7 +10,7 @@ export default class UserCheckout extends Component {
 
         return (
             <div className="page-inner">
-              <button onClick={this.props.changeUser}>Переключить юзера</button>
+              <button>Переключить юзера</button>
             </div>
         )
     }

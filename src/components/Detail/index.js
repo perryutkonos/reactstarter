@@ -12,7 +12,6 @@ export default class Detail extends Component {
 
     componentWillMount() {
 
-
         list.forEach(item => {
 
             if (item.code === this.props.match.params.code) {
@@ -25,6 +24,7 @@ export default class Detail extends Component {
 
     render() {
 
+        console.log(this.props)
         return (
 
             <div className="page-inner">

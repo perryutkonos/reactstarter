@@ -4,5 +4,9 @@ const webpack = require('webpack');
 
 module.exports = merge(common, {
 
-    mode: "production",
+  entry: {
+    app: "./src/entry/server",
+  },
+
+  mode: "production",
 });

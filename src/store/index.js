@@ -1,5 +1,5 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
-import {rootReducer} from './reducers';
+import {rootReducer} from './reducers/index';
 import {routerReducer} from "react-router-redux";
 
 export default function configureStore(middleware) {
@@ -12,5 +12,4 @@ export default function configureStore(middleware) {
     );
 
     return store;
-
 }

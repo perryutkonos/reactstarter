@@ -1,18 +1,11 @@
 import React from 'react'
 import {render} from 'react-dom'
-
 import {Provider} from 'react-redux'
-import {BrowserRouter} from 'react-router-dom';
-
 import createHistory from "history/createBrowserHistory";
-import {
-    ConnectedRouter,
-    routerMiddleware,
-    push
-} from "react-router-redux";
-import configureStore from './App/store';
+import {ConnectedRouter, routerMiddleware} from "react-router-redux";
 
-import App from './App'
+import configureStore from '../store/index';
+import App from '../components/App/index'
 
 import "./index.html"
 

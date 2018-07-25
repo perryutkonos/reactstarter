@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {list} from "../../data/list";
 
-import ListItem from "./ListItem";
+import ListItem from "./ListItem/index";
 
 export default class List extends Component {
 

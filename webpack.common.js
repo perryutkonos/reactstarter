@@ -5,25 +5,11 @@ const webpack = require('webpack');
 
 module.exports = {
 
-    entry: {
-        app: "./src/index",
-    },
-
     output: {
         path: path.join(__dirname, '/build'),
         filename: '[name].js',
         publicPath: '/'
     },
-
-    devServer: {
-        contentBase: path.join(__dirname, "build"),
-        compress: true,
-        port: 9000,
-        historyApiFallback: true,
-
-    },
-
-    watch: true,
 
     module: { //Обновлено
         rules: [ //добавили babel-loader
