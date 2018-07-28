@@ -1,27 +1,29 @@
-import express from 'express';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import App from '../components/App';
-import Html from '../components/Html';
+import React from 'react'
+import { renderToString } from 'react-dom/server'
+import {Provider} from 'react-redux'
+import createHistory from "history/createBrowserHistory";
+import {ConnectedRouter, routerMiddleware} from "react-router-redux";
+import configureStore from '../store/index';
 
-const port = 3000;
-const server = express();
+import App from '../components/App/index'
+import Html from '../components/Html'
 
-server.get('/', (req, res) => {
-  /**
-   * renderToString() will take our React app and turn it into a string
-   * to be inserted into our Html template function.
-   */
-  const body = ReactDOMServer.renderToString(<App />);
-  const title = 'Server side Rendering with Styled Components';
+const history = createHistory();
+const middleware = routerMiddleware(history);
 
-  res.send(
-    Html({
-      body,
-      title
-    })
-  );
-});
+export default function handleRender(req, res) {
 
-server.listen(port);
-console.log(`Serving at http://localhost:${port}`);
+  // Create a new Redux store instance
+  const store = configureStore(middleware);
+
+  const html = renderToString(
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App/>
+      </ConnectedRouter>
+    </Provider>
+);
+
+  // Send the rendered page back to the client
+  res.send(Html(html))
+}
