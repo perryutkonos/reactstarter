@@ -36,7 +36,8 @@
     "webpack": "*",
     "webpack-cli": "^2.0.13",
     "webpack-dev-server": "*",
-    "webpack-merge": "*"
+    "webpack-merge": "*",
+    "styled-components": "*"
   },
   "devDependencies": {
     "redux": "^4.0.0"

@@ -1,12 +1,18 @@
-const Html = (body) => (
-  `<html>
-  <head>
-    <title>Тратата</title>
-  </head>
-  <body style="margin:0">
-  <div id="app">${body}</div>
-  <script src="/client.js"></script>
-  </body>
-  </html>`
-)
+import React from 'react';
+
+const Html = ({markup, styleTags}) => {
+
+  return (
+    <html>
+    <head>
+      <title>Тратата</title>
+      {styleTags}
+    </head>
+    <body>
+    <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
+    <script src="/client.js"/>
+    </body>
+    </html>
+  )
+}
 export default Html;

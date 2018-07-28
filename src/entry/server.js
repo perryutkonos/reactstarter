@@ -1,6 +1,9 @@
 import React from 'react'
+import { renderToString } from 'react-dom/server'
 import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux'
+
+import { ServerStyleSheet } from 'styled-components'
 
 import configureStore from '../store/index';
 const store = configureStore();
@@ -8,16 +11,27 @@ const store = configureStore();
 import App from '../components/App/index'
 import Html from '../components/Html'
 
-export default function handleRender() {
 
-  const html = renderToString(
+export default function handleRender(req, res) {
+
+  const appComponent  = (
     <Provider store={store}>
-      <StaticRouter history={history}>
+      <StaticRouter location={req.url}>
         <App/>
       </StaticRouter>
     </Provider>
   );
 
-  // Send the rendered page back to the client
- return Html(html)
+  const sheet = new ServerStyleSheet()
+  const markup  = renderToString(sheet.collectStyles(appComponent))
+  const styleTags = sheet.getStyleElement() // or sheet.getStyleElement()
+
+  const html = renderToString(
+    <Html
+      markup ={markup}
+      styleTags={styleTags}
+    />
+  );
+
+  res.send(html)
 }
