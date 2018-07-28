@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = merge(common, {
 
   entry: {
-    app: "./src/entry/client",
+    client: "./src/entry/client",
   },
 
   output: {
@@ -15,13 +15,5 @@ module.exports = merge(common, {
     publicPath: '/',
   },
 
-  devServer: {
-    contentBase: path.join(__dirname, "build"),
-    compress: true,
-    port: 9000,
-    historyApiFallback: true,
-  },
-  watch: true,
-
-  mode: "development"
+  mode: "production"
 });

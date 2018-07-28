@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import "./style.scss"
+//import "./style.scss"
 
 import {list} from "../../data/list";
 
@@ -24,7 +24,6 @@ export default class Detail extends Component {
 
     render() {
 
-        console.log(this.props)
         return (
 
             <div className="page-inner">

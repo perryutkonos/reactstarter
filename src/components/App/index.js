@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 
-import "./style.scss";
+//import "./style.scss";
 
 import Header from "../../layout/Header";
 
@@ -25,10 +25,10 @@ class App extends Component {
         <main>
           <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/about' component={About}/>
-            <Route path='/users_checkout' component={UserCheckout}/>
+            <Route exact path='/about' component={About}/>
+            <Route exact path='/users_checkout' component={UserCheckout}/>
             <Route exact path='/list' component={List}/>
-            <Route path='/list/:code' component={Detail}/>
+            <Route exact path='/list/:code' component={Detail}/>
           </Switch>
         </main>
       </div>
