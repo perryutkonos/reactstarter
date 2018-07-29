@@ -16,8 +16,10 @@
     "babel-preset-env": "*",
     "babel-preset-react": "*",
     "babel-preset-stage-0": "*",
+    "classnames": "^2.2.6",
     "css-loader": "*",
     "express": "*",
+    "extract-css-chunks-webpack-plugin": "^3.0.11",
     "file-loader": "*",
     "history": "^4.7.2",
     "node-sass": "^4.9.0",
@@ -33,11 +35,11 @@
     "redux-thunk": "*",
     "sass-loader": "^7.0.2",
     "style-loader": "*",
+    "styled-components": "*",
     "webpack": "*",
     "webpack-cli": "^2.0.13",
     "webpack-dev-server": "*",
-    "webpack-merge": "*",
-    "styled-components": "*"
+    "webpack-merge": "*"
   },
   "devDependencies": {
     "redux": "^4.0.0"

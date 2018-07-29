@@ -6,6 +6,7 @@ const Html = ({markup, styleTags}) => {
     <html>
     <head>
       <title>Тратата</title>
+      <link rel="stylesheet" href="/style.css"/>
       {styleTags}
     </head>
     <body>

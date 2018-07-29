@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 
-//import "./style.scss";
+import "./style.scss";
 
 import Header from "../../layout/Header";
 
