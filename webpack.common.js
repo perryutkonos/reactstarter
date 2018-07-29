@@ -23,7 +23,10 @@ module.exports = {
         test: /\.scss/,
         use: IS_CLIENT ? [
           ExtractCssChunks.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {minimize: true}
+          },
           'sass-loader?resolve url'
         ] : IS_SERVER ? [
           'css-loader/locals',
