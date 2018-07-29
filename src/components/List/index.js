@@ -1,28 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {list} from "../../data/list";
 
 import ListItem from "./ListItem/index";
 
-export default class List extends Component {
+const List = () => (
 
-    constructor(props) {
-        super(props);
-    }
+  <div className="page-inner">
+    <h2>Список</h2>
+    {list.map(user =>
+      <ListItem key={user.id} name={user.name} code={user.code}/>
+    )}
+  </div>
+);
 
-    render() {
-
-        const userArray = list;
-
-        const userList = userArray.map((user, index) =>
-            <ListItem key={user.id} user={user}/>
-        );
-
-        return (
-
-            <div className="page-inner">
-                <h1>Список</h1>
-                {userList}
-            </div>
-        )
-    }
-}
+export default List;

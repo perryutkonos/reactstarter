@@ -1,47 +1,40 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom';
+import {connect} from "react-redux";
+import { withRouter } from 'react-router-dom';
 
-import  "./style.scss";
+import "./style.scss";
 
-export default class Header extends Component {
+const Header = ({name}) => (
 
-    constructor(props) {
-        super(props);
-    }
+  <header className="header">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
-    render() {
+      <NavLink exact={true} activeClassName="active" className="nav-link" to='/'>
+        Домашняя
+      </NavLink>
 
-        return (
+      <NavLink activeClassName="active" className="nav-link" to='/about'>
+        О чем-то
+      </NavLink>
 
-            <header className="header">
-                <nav className="header-nav">
-                    <ul className="nav-list">
-                        <li className="nav-list__item">
-                            <NavLink exact={true} activeClassName="active" className="nav-list__item-link" to='/'>
-                                Домашняя
-                            </NavLink>
-                        </li>
-                        <li className="nav-list__item">
-                            <NavLink activeClassName="active" className="nav-list__item-link" to='/about'>
-                                О чем-то
-                            </NavLink>
-                        </li>
-                        <li className="nav-list__item">
-                            <NavLink activeClassName="active" className="nav-list__item-link" to='/users_checkout'>
-                                Переключить юзера
-                            </NavLink>
-                        </li>
-                        <li className="nav-list__item">
-                            <NavLink activeClassName="active" className="nav-list__item-link" to='/list'>
-                                Список c деталками
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav>
-                <div className="header-user">
-                    {this.props.user}
-                </div>
-            </header>
-        )
-    }
-}
+      <NavLink activeClassName="active" className="nav-link" to='/users_checkout'>
+        Переключить юзера
+      </NavLink>
+
+      <NavLink activeClassName="active" className="nav-link" to='/list'>
+        Список c деталками
+      </NavLink>
+
+    </nav>
+    <div className="header-user">
+      {name}
+    </div>
+  </header>
+)
+
+const connector = connect(
+  ({userReducer}) => ({...userReducer})
+);
+
+export default withRouter (connector(Header));

@@ -1,12 +1,10 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux';
-import {rootReducer} from './reducers/index';
-import {routerReducer} from "react-router-redux";
+import {createStore, combineReducers} from 'redux';
+import userReducer from './reducers/user';
 
 export default function configureStore() {
     const store = createStore(
         combineReducers({
-            rootReducer,
-            router: routerReducer
+            userReducer
         }),
 
     );

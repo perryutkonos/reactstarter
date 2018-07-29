@@ -1,17 +1,37 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as actions from "../../store/reducers/user";
 
-export default class UserCheckout extends Component {
+class UserCheckout extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+  state = {
+    userName: this.props.name
+  };
 
-    render() {
+  onChange = (event) =>{
+    this.setState({userName: event.target.value});
+  };
 
-        return (
-            <div className="page-inner">
-              <button>Переключить юзера</button>
-            </div>
-        )
-    }
+  changeUser = () => {
+    const {changeUser} = this.props;
+    changeUser(this.state.userName)
+  };
+
+  render() {
+    return (
+      <div className="page-inner">
+        <h2>Смена пользователя</h2>
+        <input type="text" value={this.state.userName} onChange={this.onChange}/>
+        <button onClick={this.changeUser}>Переключить юзера</button>
+      </div>
+    );
+  }
 }
+
+const connector = connect(
+  ({userReducer}) => ({...userReducer}),
+  dispatch => bindActionCreators(actions, dispatch),
+);
+
+export default connector(UserCheckout);

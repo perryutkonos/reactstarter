@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build:client": "webpack --config webpack.client.js",
-    "build:server": "webpack --config webpack.prod.js",
-    "build": "npm run build:client && npm run build:server"
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --open --config webpack.dev.js",
+    "build:client": "cross-env NODE_ENV=browser webpack --config webpack.client.js",
+    "build:server": "cross-env NODE_ENV=server webpack --config webpack.prod.js",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node ./server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,8 @@
     "babel-preset-env": "*",
     "babel-preset-react": "*",
     "babel-preset-stage-0": "*",
-    "classnames": "^2.2.6",
+    "bootstrap": "^4.1.3",
+    "cross-env": "^5.2.0",
     "css-loader": "*",
     "express": "*",
     "extract-css-chunks-webpack-plugin": "^3.0.11",
@@ -35,7 +37,6 @@
     "redux-thunk": "*",
     "sass-loader": "^7.0.2",
     "style-loader": "*",
-    "styled-components": "*",
     "webpack": "*",
     "webpack-cli": "^2.0.13",
     "webpack-dev-server": "*",

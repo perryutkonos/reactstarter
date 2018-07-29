@@ -1,13 +1,14 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const webpack = require('webpack');
 const path = require('path');
-const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
 
 module.exports = merge(common, {
 
+  target: 'node',
+  mode: "production",
+
   entry: {
-    app: "./src/entry/server",
+    server: "./src/entry/server",
   },
 
   output: {
@@ -18,29 +19,4 @@ module.exports = merge(common, {
     libraryExport: 'default',
     libraryTarget: 'commonjs2',
   },
-
-
-  module: {
-    rules: [ //добавили babel-loader
-      {
-        test: /\.js?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          "presets": ["env", "stage-0", "react", "es2017"],
-        }
-      }, {
-        test: /\.(html)$/,
-        loader: 'file-loader?name=[name].[ext]'
-      }, {
-        test: /\.scss/,
-        use: [
-          'css-loader/locals',
-          'sass-loader?resolve url'
-        ]
-      }
-    ]
-  },
-  target: 'node',
-  mode: "production",
 });

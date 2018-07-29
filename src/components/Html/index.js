@@ -1,17 +1,18 @@
 import React from 'react';
 
-const Html = ({markup, styleTags}) => {
+const Html = ({component}) => {
 
   return (
     <html>
     <head>
       <title>Тратата</title>
       <link rel="stylesheet" href="/style.css"/>
-      {styleTags}
     </head>
     <body>
-    <div id="app" dangerouslySetInnerHTML={{ __html: markup }} />
-    <script src="/client.js"/>
+    <div id="app">
+      {component}
+    </div>
+    <script src="/app.js"/>
     </body>
     </html>
   )
