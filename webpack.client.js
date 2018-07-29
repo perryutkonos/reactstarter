@@ -9,19 +9,10 @@ module.exports = merge(common, {
   },
 
   output: {
-    path: path.join(__dirname, '/build/'),
+    path: path.join(__dirname, '/build/assets'),
     filename: '[name].js',
     publicPath: '/',
   },
 
-  devServer: {
-    contentBase: path.join(__dirname, "build"),
-    compress: true,
-    port: 9000,
-    historyApiFallback: true,
-  },
-
-  watch: true,
-
-  mode: "development"
+  mode: "production",
 });
