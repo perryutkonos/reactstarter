@@ -11,11 +11,20 @@ import Detail from "../Detail";
 import "bootstrap/scss/bootstrap.scss"
 import "./style.scss";
 
+import logo from "../../resources/logo.jpg"
+
 const App = () => (
 
   <div className="container">
     <div className="jumbotron">
-      <h1 className="display-4">Server Side Render!</h1>
+      <div className='jumbotron-inner'>
+        <h1 className="display-4">Server Side Render!</h1>
+        <div className="jumbotron-logo">
+          <img src={logo} alt=""/>
+        </div>
+
+      </div>
+
     </div>
     <Header/>
     <main>

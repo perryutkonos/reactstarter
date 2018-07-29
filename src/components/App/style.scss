@@ -1,4 +1,15 @@
+.jumbotron-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.jumbotron-logo{
+  width: 100px;
 
+  img{
+    max-width: 100%;
+  }
+}
 .app-inner{
   margin: auto;
   max-width: 1200px;

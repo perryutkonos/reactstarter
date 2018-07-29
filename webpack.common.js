@@ -17,7 +17,7 @@ module.exports = {
           "presets": ["env", "stage-0", "react"],
         }
       }, {
-        test: /\.(html|ttf)$/,
+        test: /\.(html|ttf|jpg)$/,
         loader: 'file-loader?name=[name].[ext]'
       }, {
         test: /\.scss/,
